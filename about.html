@@ -77,28 +77,29 @@
         <button id="menu-btn" class="md:hidden text-white text-3xl">☰</button>
       </div>
 
-      <!-- Mobile Menu -->
-      <div id="mobile-menu" class="hidden md:hidden bg-blue-500 px-6 py-4">
-        <ul class="flex flex-col space-y-4 text-white text-lg font-semibold">
-          <li><a href="index.html" class="hover:underline">Home</a></li>
-          <li>
-            <a href="about.html" class="hover:underline">About</a>
-          </li>
-          <li>
-            <a href="service.html" class="hover:underline">Service</a>
-          </li>
-          <li>
-            <a href="portfolio.html" class="hover:underline">Portfolio</a>
-          </li>
-          <li>
-            <a
-              href="tel:+62123456789"
-              class="block bg-[#0F1CF3] text-center py-2 px-4 rounded-full shadow-md hover:scale-105 transition"
-            >
-              Call Us
-            </a>
-          </li>
-        </ul>
+      <!-- Mobile Menu (Glassmorphism Overlay) -->
+      <div
+        id="mobile-menu"
+        class="fixed inset-0 bg-white/20 backdrop-blur-xl flex flex-col items-center justify-center space-y-8 text-blue-600 text-2xl font-semibold z-50 transform -translate-y-full transition-transform duration-500 ease-in-out"
+      >
+        <a href="index.html" class="hover:text-gray-200 transition">Home</a>
+        <a href="about.html" class="hover:text-gray-200 transition">About</a>
+        <a href="service.html" class="hover:text-gray-200 transition"
+          >Service</a
+        >
+        <a href="portfolio.html" class="hover:text-gray-200 transition"
+          >Portfolio</a
+        >
+        <a
+          href="tel:+62123456789"
+          class="bg-white/90 text-blue-700 px-6 py-2 rounded-full shadow-lg hover:scale-105 transition"
+        >
+          Call Us
+        </a>
+        <!-- Tombol close -->
+        <button id="close-menu" class="absolute top-6 right-6 text-3xl">
+          ✕
+        </button>
       </div>
     </header>
 
@@ -148,14 +149,31 @@
     <script>
       const menuBtn = document.getElementById("menu-btn");
       const mobileMenu = document.getElementById("mobile-menu");
+      const closeMenu = document.getElementById("close-menu");
 
+      // Buka menu
       menuBtn.addEventListener("click", () => {
-        mobileMenu.classList.toggle("hidden");
+        mobileMenu.classList.remove("hidden");
+        setTimeout(() => {
+          mobileMenu.classList.remove("-translate-y-full");
+        }, 10);
       });
 
+      // Tutup menu via tombol X
+      closeMenu.addEventListener("click", () => {
+        mobileMenu.classList.add("-translate-y-full");
+        setTimeout(() => {
+          mobileMenu.classList.add("hidden");
+        }, 500);
+      });
+
+      // Tutup menu saat klik link
       document.querySelectorAll("#mobile-menu a").forEach((link) => {
         link.addEventListener("click", () => {
-          mobileMenu.classList.add("hidden");
+          mobileMenu.classList.add("-translate-y-full");
+          setTimeout(() => {
+            mobileMenu.classList.add("hidden");
+          }, 500);
         });
       });
 
