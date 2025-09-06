@@ -3,15 +3,35 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Service - VLAB Company</title>
+    <title>Vlab</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link
       rel="icon"
       type="image/png"
-      href="assets/icon/logo.jpg"
+      href="assets/icon/logo-tab.png"
       class="rounded-full"
     />
     <style>
+      /* Animasi gradient text */
+      .gradient-text {
+        background: linear-gradient(90deg, #007bff, #00d4ff, #007bff);
+        background-size: 300% 300%;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: gradientMove 5s ease infinite;
+      }
+
+      @keyframes gradientMove {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
       /* Animasi hover card 3D */
       .tilt {
         transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -115,7 +135,7 @@
     <!-- Services Section -->
     <section class="pt-28 pb-16 container mx-auto px-6">
       <div class="text-center mb-12">
-        <h2 class="text-3xl font-bold text-gray-900 mb-4">
+        <h2 class="text-3xl font-bold text-gray-900 mb-4 gradient-text">
           Tingkatkan Brand anda <br />
           dengan layanan kami
         </h2>

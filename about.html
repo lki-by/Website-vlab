@@ -3,14 +3,63 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>VLAB Company</title>
+    <title>Vlab</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link
       rel="icon"
       type="image/png"
-      href="assets/icon/logo.jpg"
+      href="assets/icon/logo-tab.png"
       class="rounded-full"
     />
+    <style>
+      /* Animasi gradient text */
+      .gradient-text {
+        background: linear-gradient(90deg, #007bff, #00d4ff, #007bff);
+        background-size: 300% 300%;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: gradientMove 5s ease infinite;
+      }
+
+      @keyframes gradientMove {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+
+      /* Animasi floating image */
+      .float {
+        animation: float 4s ease-in-out infinite;
+      }
+
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-15px);
+        }
+      }
+
+      /* Fade-in + slide-up */
+      .reveal {
+        opacity: 0;
+        transform: translateY(40px);
+        transition: all 0.8s ease-out;
+      }
+
+      .reveal.active {
+        opacity: 1;
+        transform: translateY(0px);
+      }
+    </style>
   </head>
 
   <body class="font-sans bg-gray-50">
@@ -66,7 +115,7 @@
             ></span>
           </a>
           <a
-            href="tel:+62123456789"
+            href="https://wa.link/4yftoe"
             class="bg-[#0F1CF3] text-white text-sm font-semibold py-2 px-6 rounded-full shadow-md hover:scale-105 transition"
           >
             Call Us
@@ -91,7 +140,7 @@
           >Portfolio</a
         >
         <a
-          href="tel:+62123456789"
+          href="https://wa.link/4yftoe"
           class="bg-white/90 text-blue-700 px-6 py-2 rounded-full shadow-lg hover:scale-105 transition"
         >
           Call Us
@@ -110,22 +159,22 @@
       >
         <!-- Left Image -->
         <div
-          class="group w-full lg:w-1/2 flex justify-center perspective-1000 bg-transparent"
+          class="group w-full lg:w-1/2 flex justify-center perspective-1000 bg-transparent reveal"
         >
           <img
             src="assets/image/about.png"
             alt="Hero Image"
-            class="w-80 h-100 object-contain rounded-2xl transform-gpu transition-transform duration-300 ease-out will-change-transform group-hover:scale-105"
+            class="w-80 h-100 object-contain rounded-2xl float transform-gpu transition-transform duration-300 ease-out will-change-transform group-hover:scale-105"
             id="hero-image"
           />
         </div>
 
         <!-- Right Text -->
-        <div class="md:w-1/2">
+        <div class="md:w-1/2 reveal">
           <h3 class="text-gray-600 font-bold uppercase tracking-wide mb-2">
             About
           </h3>
-          <h2 class="text-3xl font-extrabold text-gray-900 mb-4">
+          <h2 class="text-3xl font-extrabold gradient-text mb-4">
             VLAB COMPANY
           </h2>
           <p class="text-gray-600 leading-relaxed">
@@ -191,8 +240,8 @@
         const x = e.clientX - left;
         const y = e.clientY - top;
 
-        const rotateX = (y / height - 0.5) * -50; // rotasi X
-        const rotateY = (x / width - 0.5) * 50; // rotasi Y
+        const rotateX = (y / height - 0.5) * -50;
+        const rotateY = (x / width - 0.5) * 50;
 
         targetX = rotateX;
         targetY = rotateY;
@@ -209,8 +258,8 @@
         currentY += (targetY - currentY) * 0.08;
 
         autoAngle += 0.02;
-        const wiggleX = Math.sin(autoAngle) * 10; // auto bergoyang X
-        const wiggleY = Math.cos(autoAngle) * 10; // auto bergoyang Y
+        const wiggleX = Math.sin(autoAngle) * 10;
+        const wiggleY = Math.cos(autoAngle) * 10;
 
         heroImage.style.transform = `rotateX(${
           currentX + wiggleX
@@ -220,6 +269,21 @@
       }
 
       animate3D();
+
+      // Scroll Reveal
+      const reveals = document.querySelectorAll(".reveal");
+      function revealOnScroll() {
+        const windowHeight = window.innerHeight;
+        reveals.forEach((el) => {
+          const elementTop = el.getBoundingClientRect().top;
+          if (elementTop < windowHeight - 100) {
+            el.classList.add("active");
+          }
+        });
+      }
+
+      window.addEventListener("scroll", revealOnScroll);
+      revealOnScroll();
     </script>
   </body>
 </html>

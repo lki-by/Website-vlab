@@ -1,73 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VLAB.id</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vlab</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="icon" type="image/png" href="assets/icon/logo.jpg" class="rounded-full">
-</head>
+    <link
+      rel="icon"
+      type="image/png"
+      href="assets/icon/logo-tab.png"
+      class="rounded-full"
+    />
+    <style>
+      /* Animasi gradient text */
+      .gradient-text {
+        background: linear-gradient(90deg, #007bff, #00d4ff, #007bff);
+        background-size: 300% 300%;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: gradientMove 5s ease infinite;
+      }
 
-<body class="bg-gray-50">
+      @keyframes gradientMove {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+    </style>
+  </head>
 
+  <body class="bg-gray-50">
     <!-- Navbar -->
-    <!-- Header / Navbar -->
-    <header class="bg-gradient-to-r to-[#004A99] from-[#007BFF] fixed w-full z-30 shadow-lg">
-        <div class="container mx-auto flex justify-between items-center px-4 md:px-8 py-3">
-            <!-- Logo -->
-            <div class="flex items-center gap-3">
-                <img src="assets/icon/logo.jpg" alt="Logo"
-                    class="w-12 h-12 rounded-full shadow-md" />
-                <div>
-                    <h1 class="text-white font-bold text-lg md:text-xl">VLAB.id</h1>
-                    <p class="text-white text-xs md:text-sm">
-                        a small company that will always grow
-                    </p>
-                </div>
-            </div>
-
-            <!-- Navbar (Desktop) -->
-            <nav class="hidden md:flex items-center gap-8">
-                <a href="index.html" class="text-white font-medium relative group">
-                    Home
-                    <span
-                        class="absolute left-0 -bottom-1 w-0 h-[2px] bg-white transition-all duration-300 group-hover:w-full"></span>
-                </a>
-                <a href="about.html" class="text-white font-medium relative group">
-                    About
-                    <span
-                        class="absolute left-0 -bottom-1 w-0 h-[2px] bg-white transition-all duration-300 group-hover:w-full"></span>
-                </a>
-                <a href="service.html" class="text-white font-medium relative group">
-                    Service
-                    <span
-                        class="absolute left-0 -bottom-1 w-0 h-[2px] bg-white transition-all duration-300 group-hover:w-full"></span>
-                </a>
-                <a href="portfolio.html" class="text-white font-medium relative group">
-                    Portfolio
-                    <span
-                        class="absolute left-0 -bottom-1 w-0 h-[2px] bg-white transition-all duration-300 group-hover:w-full"></span>
-                </a>
-                <a href="tel:+62123456789"
-                    class="bg-[#0F1CF3] text-white text-sm font-semibold py-2 px-6 rounded-full shadow-md hover:scale-105 transition">
-                    Call Us
-                </a>
-            </nav>
-            <button id="menu-btn" class="md:hidden text-white text-3xl">☰</button>
+    <header
+      class="bg-gradient-to-r to-[#004A99] from-[#007BFF] fixed w-full z-30 shadow-lg"
+    >
+      <div
+        class="container mx-auto flex justify-between items-center px-4 md:px-8 py-3"
+      >
+        <!-- Logo -->
+        <div class="flex items-center gap-3">
+          <img
+            src="assets/icon/logo.jpg"
+            alt="Logo"
+            class="w-12 h-12 rounded-full shadow-md"
+          />
+          <div>
+            <h1 class="text-white font-bold text-lg md:text-xl">VLAB.id</h1>
+            <p class="text-white text-xs md:text-sm">
+              a small company that will always grow
+            </p>
+          </div>
         </div>
 
-        <!-- Mobile Menu (Glassmorphism Overlay) -->
+        <!-- Navbar (Desktop) -->
+        <nav class="hidden md:flex items-center gap-8">
+          <a href="index.html" class="text-white font-medium relative group">
+            Home
+            <span
+              class="absolute left-0 -bottom-1 w-0 h-[2px] bg-white transition-all duration-300 group-hover:w-full"
+            ></span>
+          </a>
+          <a href="about.html" class="text-white font-medium relative group">
+            About
+            <span
+              class="absolute left-0 -bottom-1 w-0 h-[2px] bg-white transition-all duration-300 group-hover:w-full"
+            ></span>
+          </a>
+          <a href="service.html" class="text-white font-medium relative group">
+            Service
+            <span
+              class="absolute left-0 -bottom-1 w-0 h-[2px] bg-white transition-all duration-300 group-hover:w-full"
+            ></span>
+          </a>
+          <a
+            href="portfolio.html"
+            class="text-white font-medium relative group"
+          >
+            Portfolio
+            <span
+              class="absolute left-0 -bottom-1 w-0 h-[2px] bg-white transition-all duration-300 group-hover:w-full"
+            ></span>
+          </a>
+          <a
+            href="tel:+62123456789"
+            class="bg-[#0F1CF3] text-white text-sm font-semibold py-2 px-6 rounded-full shadow-md hover:scale-105 transition"
+          >
+            Call Us
+          </a>
+        </nav>
+        <button id="menu-btn" class="md:hidden text-white text-3xl">☰</button>
+      </div>
+
+      <!-- Mobile Menu -->
       <div
         id="mobile-menu"
         class="fixed inset-0 bg-white/20 backdrop-blur-xl flex flex-col items-center justify-center space-y-8 text-blue-600 text-2xl font-semibold z-50 transform -translate-y-full transition-transform duration-500 ease-in-out"
       >
-        <a href="index.html" class="hover:text-gray-200 transition">Home</a>
-        <a href="about.html" class="hover:text-gray-200 transition">About</a>
-        <a href="service.html" class="hover:text-gray-200 transition"
-          >Service</a
-        >
-        <a href="portfolio.html" class="hover:text-gray-200 transition"
+        <a href="index.html" class="hover:text-white transition">Home</a>
+        <a href="about.html" class="hover:text-white transition">About</a>
+        <a href="service.html" class="hover:text-white transition">Service</a>
+        <a href="portfolio.html" class="hover:text-white transition"
           >Portfolio</a
         >
         <a
@@ -76,7 +114,6 @@
         >
           Call Us
         </a>
-        <!-- Tombol close -->
         <button id="close-menu" class="absolute top-6 right-6 text-3xl">
           ✕
         </button>
@@ -84,99 +121,188 @@
     </header>
 
     <!-- Section Title -->
-    <section class="text-center py-20" data-aos="fade-up"> <!-- Increased padding to avoid header overlap -->
-        <h2 class="text-2xl md:text-3xl font-bold text-gray-800">
-            Websites That We Ever Made
-        </h2>
+    <section class="text-center py-24">
+      <h2 class="text-2xl md:text-3xl font-bold text-gray-800 gradient-text">
+        Websites That We Ever Made
+      </h2>
     </section>
 
     <!-- Projects Grid -->
-    <section class="container mx-auto px-6 pb-12">
-        <div class="grid md:grid-cols-2 gap-8">
-
-            <!-- Project Card -->
-
-            <div class="bg-white rounded-xl shadow-md overflow-hidden">
-                <img src="assets\image\mockup_5.jpg" alt="Canteen Web"
-                    class="w-full h-48 object-cover">
-                <div class="p-4">
-                    <h3 class="text-lg font-semibold">Canteen Web</h3>
-                    <a href="#"
-                        class="mt-3 inline-block bg-gray-800 text-white px-4 py-2 rounded-lg hover:bg-gray-700">See
-                        Deskripsi</a>
-                </div>
-            </div>
-
-            <div class="bg-white rounded-xl shadow-md overflow-hidden">
-                <img src="assets\image\mockup_6.jpg" alt="LMS Web"
-                    class="w-full h-48 object-cover">
-                <div class="p-4">
-                    <h3 class="text-lg font-semibold">LMS Web</h3>
-                    <a href="#"
-                        class="mt-3 inline-block bg-gray-800 text-white px-4 py-2 rounded-lg hover:bg-gray-700">See
-                        Deskripsi</a>
-                </div>
-            </div>
-
-            <div class="bg-white rounded-xl shadow-md overflow-hidden">
-                <img src="assets\image\mockup_8.jpg" alt="Travel Web"
-                    class="w-full h-48 object-cover">
-                <div class="p-4">
-                    <h3 class="text-lg font-semibold">Travel Web</h3>
-                    <a href="#"
-                        class="mt-3 inline-block bg-gray-800 text-white px-4 py-2 rounded-lg hover:bg-gray-700">See
-                        Deskripsi</a>
-                </div>
-            </div>
-
-            <div class="bg-white rounded-xl shadow-md overflow-hidden">
-                <img src="assets\image\mockup_3.jpg" alt="To Do List Web"
-                    class="w-full h-48 object-cover">
-                <div class="p-4">
-                    <h3 class="text-lg font-semibold">To Do List Web</h3>
-                    <a href="#"
-                        class="mt-3 inline-block bg-gray-800 text-white px-4 py-2 rounded-lg hover:bg-gray-700">See
-                        Deskripsi</a>
-                </div>
-            </div>
-
+    <section class="container mx-auto px-6 pb-20">
+      <div class="grid md:grid-cols-2 gap-10">
+        <!-- Project Card -->
+        <div
+          class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition group"
+        >
+          <img
+            src="assets/image/mockup_5.jpg"
+            alt="Canteen Web"
+            class="w-full h-52 object-cover group-hover:scale-105 transition-transform duration-300"
+          />
+          <div class="p-5">
+            <h3 class="text-xl font-bold text-gray-800">Canteen Web</h3>
+            <button
+              data-title="Canteen Web"
+              data-desc="Platform digital untuk kantin sekolah/kampus yang memudahkan pemesanan makanan secara online, transparan, dan cepat."
+              class="mt-4 inline-block bg-gradient-to-r from-blue-500 to-blue-700 text-white px-6 py-2 rounded-full shadow-md hover:scale-105 transition"
+            >
+              See Deskripsi
+            </button>
+          </div>
         </div>
 
-        <!-- Show more -->
-        <div class="text-center mt-8">
+        <div
+          class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition group"
+        >
+          <img
+            src="assets/image/mockup_6.jpg"
+            alt="LMS Web"
+            class="w-full h-52 object-cover group-hover:scale-105 transition-transform duration-300"
+          />
+          <div class="p-5">
+            <h3 class="text-xl font-bold text-gray-800">LMS Web</h3>
+            <button
+              data-title="LMS Web"
+              data-desc="Learning Management System modern yang mendukung pembelajaran online dengan fitur ujian, materi interaktif, dan laporan realtime."
+              class="mt-4 inline-block bg-gradient-to-r from-blue-500 to-blue-700 text-white px-6 py-2 rounded-full shadow-md hover:scale-105 transition"
+            >
+              See Deskripsi
+            </button>
+          </div>
+        </div>
+
+        <div
+          class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition group"
+        >
+          <img
+            src="assets/image/mockup_8.jpg"
+            alt="Travel Web"
+            class="w-full h-52 object-cover group-hover:scale-105 transition-transform duration-300"
+          />
+          <div class="p-5">
+            <h3 class="text-xl font-bold text-gray-800">Travel Web</h3>
+            <button
+              data-title="Travel Web"
+              data-desc="Website pemesanan perjalanan yang menyediakan paket wisata, booking tiket, serta rekomendasi destinasi terbaik."
+              class="mt-4 inline-block bg-gradient-to-r from-blue-500 to-blue-700 text-white px-6 py-2 rounded-full shadow-md hover:scale-105 transition"
+            >
+              See Deskripsi
+            </button>
+          </div>
+        </div>
+
+        <div
+          class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition group"
+        >
+          <img
+            src="assets/image/mockup_3.jpg"
+            alt="To Do List Web"
+            class="w-full h-52 object-cover group-hover:scale-105 transition-transform duration-300"
+          />
+          <div class="p-5">
+            <h3 class="text-xl font-bold text-gray-800">To Do List Web</h3>
+            <button
+              data-title="To Do List Web"
+              data-desc="Aplikasi sederhana namun powerful untuk mencatat aktivitas harian dengan sistem reminder dan kategori tugas."
+              class="mt-4 inline-block bg-gradient-to-r from-blue-500 to-blue-700 text-white px-6 py-2 rounded-full shadow-md hover:scale-105 transition"
+            >
+              See Deskripsi
+            </button>
+          </div>
+        </div>
+      </div>
     </section>
 
-</body>
+    <!-- Modal -->
+    <div
+      id="modal"
+      class="fixed inset-0 bg-black/50 hidden items-center justify-center z-50 transition-opacity duration-300"
+    >
+      <div
+        class="bg-white rounded-2xl shadow-xl max-w-lg w-11/12 p-6 relative transform scale-95 opacity-0 transition-all duration-300"
+        id="modal-content"
+      >
+        <button
+          id="close-modal"
+          class="absolute top-3 right-4 text-2xl font-bold text-gray-500 hover:text-red-500"
+        >
+          ✕
+        </button>
+        <h3 id="modal-title" class="text-2xl font-bold text-gray-800 mb-4"></h3>
+        <p id="modal-desc" class="text-gray-600 leading-relaxed"></p>
+      </div>
+    </div>
 
-</html>
-<script>
-    const menuBtn = document.getElementById("menu-btn");
+    <script>
+      // Mobile Menu
+      const menuBtn = document.getElementById("menu-btn");
       const mobileMenu = document.getElementById("mobile-menu");
       const closeMenu = document.getElementById("close-menu");
 
-      // Buka menu
       menuBtn.addEventListener("click", () => {
         mobileMenu.classList.remove("hidden");
         setTimeout(() => {
           mobileMenu.classList.remove("-translate-y-full");
+          mobileMenu.classList.add("translate-y-0");
         }, 10);
       });
 
-      // Tutup menu via tombol X
       closeMenu.addEventListener("click", () => {
         mobileMenu.classList.add("-translate-y-full");
         setTimeout(() => {
           mobileMenu.classList.add("hidden");
+          mobileMenu.classList.remove("translate-y-0");
         }, 500);
       });
 
-      // Tutup menu saat klik link
       document.querySelectorAll("#mobile-menu a").forEach((link) => {
         link.addEventListener("click", () => {
           mobileMenu.classList.add("-translate-y-full");
           setTimeout(() => {
             mobileMenu.classList.add("hidden");
+            mobileMenu.classList.remove("translate-y-0");
           }, 500);
         });
       });
-</script>
+
+      // Modal
+      const modal = document.getElementById("modal");
+      const modalContent = document.getElementById("modal-content");
+      const modalTitle = document.getElementById("modal-title");
+      const modalDesc = document.getElementById("modal-desc");
+      const closeModal = document.getElementById("close-modal");
+
+      document.querySelectorAll("[data-title]").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          modalTitle.textContent = btn.dataset.title;
+          modalDesc.textContent = btn.dataset.desc;
+          modal.classList.remove("hidden");
+          modal.classList.add("flex");
+
+          setTimeout(() => {
+            modalContent.classList.remove("scale-95", "opacity-0");
+            modalContent.classList.add("scale-100", "opacity-100");
+          }, 10);
+        });
+      });
+
+      closeModal.addEventListener("click", () => {
+        modalContent.classList.add("scale-95", "opacity-0");
+        setTimeout(() => {
+          modal.classList.add("hidden");
+          modal.classList.remove("flex");
+        }, 300);
+      });
+
+      modal.addEventListener("click", (e) => {
+        if (e.target === modal) {
+          modalContent.classList.add("scale-95", "opacity-0");
+          setTimeout(() => {
+            modal.classList.add("hidden");
+            modal.classList.remove("flex");
+          }, 300);
+        }
+      });
+    </script>
+  </body>
+</html>
